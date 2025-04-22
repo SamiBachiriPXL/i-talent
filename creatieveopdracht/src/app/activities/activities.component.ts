@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from '../header/header.component';
 import {FormsModule} from '@angular/forms';
-import {NgForOf} from '@angular/common';
+import {NgClass, NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-activities',
@@ -11,74 +11,132 @@ import {NgForOf} from '@angular/common';
   imports: [
     HeaderComponent,
     FormsModule,
-    NgForOf
+    NgForOf,
+    NgClass
   ]
 })
 export class ActivitiesComponent {
   selectedDomain: string = 'all';
 
   activities = [
+    // Seminaires
     {
       domain: 'seminaries',
-      title: 'CBTW',
-      description:
-        'Eerst werd er verteld wat design patterns zijn en in welke categorieën ze zijn opgesplitst...',
+      title: 'CBTW/Positive Thinking Company: CQRS with MediatR',
+      description: 'Introductie tot design patterns en CQRS.',
       location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
-      date: '27 februari 2024 10:00 – 12:00',
+      date: '27 februari 2024, 10:00 – 12:00',
     },
     {
       domain: 'seminaries',
-      title: 'BIQ',
-      description:
-        'Deze seminarie ging over code quality en het verbeteren van je code...',
+      title: 'BIQ: Het nut van pull requests en code review in een product development lifecycle',
+      description: 'Codekwaliteit verbeteren met SonarQube.',
       location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
-      date: '5 maart 2024 9:30 - 12:00',
+      date: '5 maart 2024, 9:30 - 12:00',
+    },
+    {
+      domain: 'seminaries',
+      title: 'Tobania: Scrum – a new programming language',
+      description: 'Overzicht van SCRUM en de programmeertaal.',
+      location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
+      date: '30 april 2024, 10:00 - 12:00',
+    },
+    {
+      domain: 'seminaries',
+      title: 'Harmony group: Outsystems',
+      description: 'OutSystems gebruiken voor GenAI en AR.',
+      location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G412a',
+      date: '7 mei 2024, 08:30 - 11:30',
+    },
+    {
+      domain: 'seminaries',
+      title: 'IBM: Discover the meeting point of GenAI, Prompt Engineering and Quantum Computing',
+      description: 'AI, machine learning en quantum computing.',
+      location: 'Corda 7 - CC712',
+      date: '6 november 2024, 13:15 - 16:00',
+    },
+    {
+      domain: 'seminaries',
+      title: 'Nocomputer: prompt engineering',
+      description: 'Hoe AI werkt en effectieve prompts schrijven.',
+      location: 'Corda 7 - CC714',
+      date: '23 oktober 2024, 13:30 - 17:30',
+    },
+    {
+      domain: 'seminaries',
+      title: 'The value hub: How to facilitate a workshop',
+      description: 'Sprints gebruiken voor een webshop.',
+      location: 'Corda 7 - CC713',
+      date: '4 december 2024, 13:30 - 17:30',
+    },
+    {
+      domain: 'seminaries',
+      title: 'AE: State management for Angular',
+      description: 'State management in Angular met signals.',
+      location: 'Corda 7 - CC712',
+      date: '11 december 2024, 13:30 - 17:30',
+    },
+    {
+      domain: 'seminaries',
+      title: 'Kabisa: Gebruik van AI in softwareontwikkeling',
+      description: 'LLM, ADR’s en AI-ontwikkeltips.',
+      location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
+      date: '14 mei 2024, 09:00 – 12:00',
+    },
+
+    // Innovatie
+    {
+      domain: 'innovatie',
+      title: 'Innovatieroute: Domain Driven Design',
+      description: 'Workshop van drie dagen over DDD.',
+      location: 'Corda 7 - CC713',
+      date: '24/09/2024, 01/10/2024, 8/10/2024, 17u',
     },
     {
       domain: 'innovatie',
-      title: 'Hackaton: Hacktopia',
-      description:
-        'Voor deze hackaton moesten wij een kort project maken in een team...',
-      location: 'AE, Brightspace, Interleuvenlaan 74, 3001 Leuven',
-      date: '01/03/2025, 10u-22u',
+      title: 'Hackaton: Hacktopia – Terraforming your future',
+      description: 'Teamproject over terraforming.',
+      location: 'Interleuvenlaan 74, 3001 Leuven',
+      date: '1/03/2025, 24u',
+    },
+
+    // Persoonlijke Ontwikkeling
+    {
+      domain: 'persoonlijkeOntwikkeling',
+      title: 'Projectweek 2TIN',
+      description: 'Onderzoeksproject om teamwork te versterken.',
+      location: 'Digital PXL - Elfde Liniestraat',
+      date: '12/02/2024 – 16/02/2024',
+    },
+    {
+      domain: 'persoonlijkeOntwikkeling',
+      title: 'POP-sessie 2TIN: Popping',
+      description: 'Feedback geven en ontvangen.',
+      location: 'Digital PXL - Elfde Liniestraat',
+      date: 'Data en duur van de activiteit',
+    },
+    {
+      domain: 'persoonlijkeOntwikkeling',
+      title: 'POP-sessie 2TIN: Brein aan het werk! Niet storen!',
+      description: 'Verslaving en Eisenhower-matrix.',
+      location: 'Digital PXL - Elfde Liniestraat',
+      date: 'Data en duur van de activiteit',
     },
     {
       domain: 'persoonlijkeOntwikkeling',
       title: 'POP-sessie 3TIN: My Team and I',
-      description: 'Korte omschrijving activiteit...',
-      location: 'Locatie onbekend',
-      date: 'Datum onbekend',
+      description: 'Teambuilding om samenwerking te verbeteren.',
+      location: 'Digital PXL - Elfde Liniestraat',
+      date: 'Data en duur van de activiteit',
     },
+
+    // Internationalisering
     {
       domain: 'internationalisering',
-      title: 'Internationalisering Activiteit',
-      description: 'Korte omschrijving activiteit...',
-      location: 'Locatie onbekend',
-      date: 'Datum onbekend',
-    },
-    {
-      domain: 'seminaries',
-      title: 'BIQ',
-      description:
-        'Deze seminarie ging over code quality en het verbeteren van je code...',
-      location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
-      date: '5 maart 2024 9:30 - 12:00',
-    },
-    {
-      domain: 'seminaries',
-      title: 'BIQ',
-      description:
-        'Deze seminarie ging over code quality en het verbeteren van je code...',
-      location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
-      date: '5 maart 2024 9:30 - 12:00',
-    },
-    {
-      domain: 'seminaries',
-      title: 'BIQ',
-      description:
-        'Deze seminarie ging over code quality en het verbeteren van je code...',
-      location: 'Digital PXL - Elfde Liniestraat 24 Gebouw G G414',
-      date: '5 maart 2024 9:30 - 12:00',
+      title: 'Bus-IT metropolitan Cardiff',
+      description: 'Mockup-app om de maatschappij te verbeteren.',
+      location: 'Metropolitan Cardiff Wales',
+      date: '07/04/2024 – 12/04/2024',
     },
   ];
 

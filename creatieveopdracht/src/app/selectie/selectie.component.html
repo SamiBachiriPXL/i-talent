@@ -1,1 +1,30 @@
-<p>selectie works!</p>
+<app-header class="mb-8"></app-header>
+
+<main class="flex flex-col items-center bg-gradient-to-br from-purple-50 to-white min-h-screen py-16 px-6">
+  <!-- Title Section -->
+  <section class="text-center mb-12">
+    <h1 class="text-4xl font-extrabold text-blue-800 mb-4">Selecteer een Activiteit</h1>
+    <p class="text-lg text-gray-600">
+      Klik op een van de onderstaande knoppen om meer te ontdekken over de activiteiten.
+    </p>
+  </section>
+
+  <!-- Buttons to navigate to activity pages -->
+  <div class="flex flex-wrap justify-center gap-6">
+    <button
+      routerLink="busit"
+      class="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-blue-800 transform hover:scale-105 transition duration-300">
+      Bus-IT Metropolitan Cardiff
+    </button>
+    <button
+      routerLink="hackathon"
+      class="px-6 py-3 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-green-800 transform hover:scale-105 transition duration-300">
+      Hackathon AE
+    </button>
+    <button
+      routerLink="projectweek"
+      class="px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold rounded-lg shadow-md hover:from-purple-600 hover:to-purple-800 transform hover:scale-105 transition duration-300">
+      Projectweek
+    </button>
+  </div>
+</main>

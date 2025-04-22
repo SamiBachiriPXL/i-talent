@@ -27,23 +27,34 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
     @for (activity of filteredActivities; track activity) {
-      <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
-        <h2 class="text-xl font-semibold text-gray-800 mb-3">
-          {{ activity.title }}
-        </h2>
-        <p class="text-gray-600 mb-3">
-          {{ activity.description }}
-        </p>
-        <p class="flex items-center gap-2 text-sm text-gray-500">
-          <i class="fa-solid fa-location-dot text-blue-500"></i>
-          <strong>Locatie:</strong> {{ activity.location }}
-        </p>
-        <p class="flex items-center gap-2 text-sm text-gray-500">
-          <i class="fa-solid fa-calendar-days text-blue-500"></i>
-          <strong>Datum:</strong> {{ activity.date }}
-        </p>
-
-      </div>
+    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+    <span
+      class="px-3 py-1 rounded-full text-sm font-medium text-white mb-3 inline-block"
+      [ngClass]="{
+    'bg-blue-500': activity.domain === 'seminaries',
+    'bg-green-500': activity.domain === 'innovatie',
+    'bg-yellow-500': activity.domain === 'persoonlijkeOntwikkeling',
+    'bg-purple-500': activity.domain === 'internationalisering'
+    }"
+      >
+    {{ activity.domain }}
+    </span>
+    <h2 class="text-xl font-semibold text-gray-800 mb-3">
+    {{ activity.title }}
+    </h2>
+    <p class="text-gray-600 mb-3">
+    {{ activity.description }}
+    </p>
+    <p class="flex items-center gap-2 text-sm text-gray-500">
+      <i class="fa-solid fa-location-dot text-blue-500"></i>
+      <strong>Locatie:</strong> {{ activity.location }}
+    </p>
+    <p class="flex items-center gap-2 text-sm text-gray-500">
+      <i class="fa-solid fa-calendar-days text-blue-500"></i>
+      <strong>Datum:</strong> {{ activity.date }}
+    </p>
+  </div>
     }
+
   </div>
 </main>
