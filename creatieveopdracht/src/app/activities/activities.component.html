@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<main class="flex flex-col items-center bg-gradient-to-br from-blue-50 to-white min-h-screen py-12 px-4 mt-16">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4 text-center">
+    Activiteiten
+  </h1>
+  <p class="text-lg text-gray-600 mb-10 text-center max-w-2xl">
+    Hieronder vind je een overzicht van de activiteiten die ik heb gedaan. Gebruik de filter om een domein te selecteren.
+  </p>
+
+  <div class="mb-10 flex flex-col sm:flex-row items-center gap-3">
+    <label for="domainFilter" class="text-lg font-medium text-gray-700">
+      Filter op domein:
+    </label>
+    <select
+      id="domainFilter"
+      [(ngModel)]="selectedDomain"
+      class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-700"
+    >
+      <option value="all">Alle Domeinen</option>
+      <option value="seminaries">Seminaries</option>
+      <option value="innovatie">Innovatie</option>
+      <option value="persoonlijkeOntwikkeling">Persoonlijke Ontwikkeling</option>
+      <option value="internationalisering">Internationalisering</option>
+    </select>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+    @for (activity of filteredActivities; track activity) {
+      <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">
+          {{ activity.title }}
+        </h2>
+        <p class="text-gray-600 mb-3">
+          {{ activity.description }}
+        </p>
+        <p class="flex items-center gap-2 text-sm text-gray-500">
+          <i class="fa-solid fa-location-dot text-blue-500"></i>
+          <strong>Locatie:</strong> {{ activity.location }}
+        </p>
+        <p class="flex items-center gap-2 text-sm text-gray-500">
+          <i class="fa-solid fa-calendar-days text-blue-500"></i>
+          <strong>Datum:</strong> {{ activity.date }}
+        </p>
+
+      </div>
+    }
+  </div>
+</main>
