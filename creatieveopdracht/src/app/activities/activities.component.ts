@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from '../header/header.component';
 import {FormsModule} from '@angular/forms';
-import {NgClass, NgForOf} from '@angular/common';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-activities',
@@ -11,7 +11,6 @@ import {NgClass, NgForOf} from '@angular/common';
   imports: [
     HeaderComponent,
     FormsModule,
-    NgForOf,
     NgClass
   ]
 })
@@ -19,7 +18,6 @@ export class ActivitiesComponent {
   selectedDomain: string = 'all';
 
   activities = [
-    // Seminaires
     {
       domain: 'seminaries',
       title: 'CBTW/Positive Thinking Company: CQRS with MediatR',
