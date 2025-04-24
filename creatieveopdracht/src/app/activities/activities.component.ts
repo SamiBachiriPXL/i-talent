@@ -95,7 +95,7 @@ export class ActivitiesComponent {
       title: 'Hackaton: Hacktopia – Terraforming your future',
       description: 'Teamproject over terraforming.',
       location: 'Interleuvenlaan 74, 3001 Leuven',
-      date: '1/03/2025, 12u',
+      date: '01/03/2025, 12u',
     },
 
     // Persoonlijke Ontwikkeling
